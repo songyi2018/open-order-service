@@ -2,7 +2,7 @@ package com.gsb.open.platform.order.service.app.controller;
 
 import com.gsb.open.platform.order.service.app.service.impl.OrderInfoServiceImpl;
 import com.gsb.open.platform.order.service.protocol.protocol.IPayInfoService;
-import io.seata.spring.annotation.GlobalTransactional;
+//import io.seata.spring.annotation.GlobalTransactional;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.dubbo.config.annotation.Reference;
 import org.springframework.beans.factory.annotation.Autowired;

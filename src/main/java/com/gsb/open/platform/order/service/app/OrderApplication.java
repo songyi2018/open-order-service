@@ -1,6 +1,6 @@
 package com.gsb.open.platform.order.service.app;
 
-import io.seata.rm.datasource.DataSourceProxy;
+//import io.seata.rm.datasource.DataSourceProxy;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
@@ -24,7 +24,7 @@ public class OrderApplication {
         System.out.printf("------------ 启动端口号: " + serverPort + " ------------\n");
     }
 
-    public JdbcTemplate jdbcTemplate(DataSource dataSource) {
-        return new JdbcTemplate(new DataSourceProxy(dataSource));
-    }
+//    public JdbcTemplate jdbcTemplate(DataSource dataSource) {
+//        return new JdbcTemplate(new DataSourceProxy(dataSource));
+//    }
 }
