@@ -1,0 +1,3 @@
+com\gsb\open\platform\order\service\app\OrderApplication.class
+com\gsb\open\platform\order\service\app\service\impl\OrderInfoServiceImpl.class
+com\gsb\open\platform\order\service\app\controller\OrderController.class

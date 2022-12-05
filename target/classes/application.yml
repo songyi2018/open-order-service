@@ -1,0 +1,32 @@
+dubbo:
+  scan:
+    # dubbo 服务扫描基准包
+    base-packages: com.gsb.open.platform.order.service.app.service.impl
+  protocol:
+    # dubbo 协议
+    name: dubbo
+    # dubbo 协议端口（ -1 表示自增端口，从 20880 开始）
+    port: -1
+  registry:
+    # 挂载到 Spring Cloud 注册中心
+    address: nacos://hadoop102:8848
+    register: true #服务治理    是否向此注册中心订阅服务，如果设为false，将只注册，不订阅
+    subscribe: true #服务治理    是否向此注册中心订阅服务，如果设为false，将只注册，不订阅
+  cloud:
+    subscribed-services: 'open-pay-service' #配置订阅服务多个服务用,隔开,不配置默认订阅注册中心所有服务，如：'service1,service2'
+spring:
+  datasource:
+    url: jdbc:mysql://hadoop104:3306/order?serverTimezone=Asia/Shanghai&useSSL=false&useUnicode=true&characterEncoding=UTF-8
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    #初始化链接数量
+    initialSize: 5
+    #最小空闲链接数
+    minIdle: 5
+    #最大并发连接数
+    maxActive: 10
+    #获取链接等待超时的时间
+    maxWait: 60000
+    #配置间隔多久才进行一次检测,检测需要关闭的空闲链接,单位是毫秒
+    timeBetweenEvictionRunsMillis: 60000
