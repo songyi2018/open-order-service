@@ -20,32 +20,32 @@ spring:
 #  #  main:
 ##    # Spring Boot 2.1 需要设定
 ##    allow-bean-definition-overriding: true
-seata:
-  enabled: true # 1.0新特性，需要依赖seata-spring-boot-starter 默认为true
-  enable-auto-data-source-proxy: true
-  tx-service-group: seata_test_group  # 需要与config.txt中的 service.vgroup_mapping.seata-group=default 保持一致
-  server:
-    vgroupMapping:
-      seata_test_group: default # 需要与config.txt中的 service.vgroup_mapping.seata-group=default 保持一致
-    #grouplist:
-    #  default: 127.0.0.1:8091
-    disable-global-transaction: false
-  registry:  ## 注册中心
-    type: nacos #注册nacos
-    nacos:
-      application: seata-server  #nacos中seata-server启动注册成功后的服务名称
-      server-addr: hadoop102:8848
-      username: nacos
-      password: nacos
-  config: ## 配置中心  与register.conf文件中的保持一致
-    type: nacos
-    nacos:
-      server-addr: hadoop102:8848
-      application: SEATA_GROUP  #与register.conf文件中的保持一致
-      username: nacos
-      password: nacos
-      namespace: 69515911-49a5-4f1a-aad6-02ae088fb754 #默认public
-
-  client:
-    rm:
-      report-success-enable: false
+#seata:
+#  enabled: true # 1.0新特性，需要依赖seata-spring-boot-starter 默认为true
+#  enable-auto-data-source-proxy: true
+#  tx-service-group: seata_test_group  # 需要与config.txt中的 service.vgroup_mapping.seata-group=default 保持一致
+#  server:
+#    vgroupMapping:
+#      seata_test_group: default # 需要与config.txt中的 service.vgroup_mapping.seata-group=default 保持一致
+#    #grouplist:
+#    #  default: 127.0.0.1:8091
+#    disable-global-transaction: false
+#  registry:  ## 注册中心
+#    type: nacos #注册nacos
+#    nacos:
+#      application: seata-server  #nacos中seata-server启动注册成功后的服务名称
+#      server-addr: hadoop102:8848
+#      username: nacos
+#      password: nacos
+#  config: ## 配置中心  与register.conf文件中的保持一致
+#    type: nacos
+#    nacos:
+#      server-addr: hadoop102:8848
+#      application: SEATA_GROUP  #与register.conf文件中的保持一致
+#      username: nacos
+#      password: nacos
+#      namespace: 69515911-49a5-4f1a-aad6-02ae088fb754 #默认public
+#
+#  client:
+#    rm:
+#      report-success-enable: false

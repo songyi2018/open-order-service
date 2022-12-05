@@ -32,13 +32,24 @@ public class OrderController {
      * @return
      */
     @GetMapping("/index")
-    @GlobalTransactional(name = "create-order", rollbackFor = Exception.class)
+//    @GlobalTransactional(name = "create-order", rollbackFor = Exception.class)
     public String index() {
         String order = orderInfoService.createOrder();
         System.out.println(order);
         String pay = payInfoService.createPay();
         System.out.println(pay);
 
+        return "ok";
+    }
+
+    /***
+     * 调用provider服务的index方法
+     * @return
+     */
+    @GetMapping("/index1")
+    public String index1() {
+        String order = orderInfoService.createOrder();
+        System.out.println(order);
         return "ok";
     }
 }
